@@ -4,15 +4,21 @@ def checkanswer(answer):
         results.append(1)
     else:
         results.append(0)
-level = input('What level would you like 1 (HARD multiplication), 2 (make(x)the subject), multiple choice questions 3 of H (help) ')
-if level.strip() == '1':
-    f = open('data 1')
-elif level.strip() == '2':
-    f = open('data 2')
-elif level.strip() == '3':
-    f = open('data 3')
-else :
-    f = open('data 4')
+KeepAsking = True
+while KeepAsking:
+    level = input('What level would you like 1 (HARD multiplication), 2 (make(x)the subject), multiple choice questions 3 of H (help) ')
+    KeepAsking = False
+    if level.strip() == '1':
+        f = open('data 1')
+    elif level.strip() == '2':
+        f = open('data 2')
+    elif level.strip() == '3':
+        f = open('data 3')
+    else :
+        f = open('data 4')
+        for line in f:
+            print (line.strip())
+        KeepAsking = True
 
 results = []
 
