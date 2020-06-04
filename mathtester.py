@@ -1,9 +1,19 @@
-def checkanswer(answer):
-    userAns = input('your answer: ').upper()
+def checkanswer(answer, driveranswer = 0):
+    if driveron:
+        userAns = driveranswer
+    else:
+        userAns = input('your answer: ').upper()
     if userAns == answer:
         results.append(1)
     else:
         results.append(0)
+
+def checkanswerdriver(answer):
+    checkanswer(answer, "221")
+
+    print(results)
+
+driveron = True
 KeepAsking = True
 while KeepAsking:
     level = input('What level would you like 1 (HARD multiplication), 2 (make(x)the subject), multiple choice questions 3 of H (help) ')
@@ -27,8 +37,10 @@ answers = []
 for line in f:
     data = (line.strip().split(","))
     print(data[0])
-
-    checkanswer(data[0])
+    if driveron:
+        checkanswerdriver(data[1])
+    else:
+        checkanswer(data[1])
     answers.append(data[0])
 
 print(results)
