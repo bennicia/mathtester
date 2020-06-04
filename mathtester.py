@@ -13,7 +13,7 @@ def checkanswerdriver(answer):
 
     print(results)
 
-driveron = True
+driveron = False
 KeepAsking = True
 while KeepAsking:
     level = input('What level would you like 1 (HARD multiplication), 2 (make(x)the subject), multiple choice questions 3 of H (help) ')
@@ -41,7 +41,7 @@ for line in f:
         checkanswerdriver(data[1])
     else:
         checkanswer(data[1])
-    answers.append(data[0])
+    answers.append(data[1])
 
 print(results)
 
